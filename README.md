@@ -1,1 +1,1 @@
-Hyprland dotfiles repo installed with GNU Stow
+This repo is where i put my experimental/not working projects.
