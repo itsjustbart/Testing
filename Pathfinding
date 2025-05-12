@@ -1,0 +1,39 @@
+local Pathfinding = game:GetService("PathfindingService")
+local Players = game:GetService("Players")
+local Runservice =game:GetService("RunService")
+
+local Enemy = script.Parent
+local Humanoid = Enemy:WaitForChild("Humanoid")
+Enemy.PrimaryPart:SetNetworkOwner(nil)
+
+local Waypoints
+local nextWayPointIndex
+local reachedConnection
+local blockedConnection
+
+local WalkSpeed = Enemy:GetAttribute("Walkspeed")
+local SprintSpeed = Enemy:GetAttribute("SprintSpeed")
+local Damage = Enemy:GetAttribute("Damage")
+local MaxDistance = Enemy:GetAttribute("MaxDistance")
+
+local function getPath(destination
+    local path = Pathfinding:CreatePath({
+        AgentHeight = 6;
+        AgentRadius    = 3;
+        AgentCanJump = false;
+        AgentCanClimb = false;
+
+        Costs = {
+            Water = 100;
+            DangerZone = math.huge
+        }
+    })
+
+    path:ComputeAsync (Enemy.HumanoidRootPart.Position, destination.Position)
+
+    return path
+end
+
+local function findTarget()
+
+end
